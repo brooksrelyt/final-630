@@ -44,6 +44,7 @@ d3.json("../data/yelp-fusion.json", function(collection) {
     // Adding classes directly from the JSON data to the svg circles to hopefully filter later
     .attr("data-id", function(d){return d.id;})
     .attr("data-star", function(d){return d.rating;})
+    .attr("data-staralt", function(d){return d.rating;})
     .attr("data-review", function(d){return d.review_count;})
     .attr("data-cat", function(d){return d.categories[0].title;})
 
