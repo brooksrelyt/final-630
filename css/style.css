@@ -37,6 +37,7 @@ body{
 .tooltip {
     padding: 1em !important;
     font-weight: bold;
+    position: relative;
 }
 .tooltip:after {
     right: 100%;
@@ -60,8 +61,8 @@ body{
 
 .boxes label {
     left: initial;
-     position: relative; 
-     width: auto; 
+    position: relative; 
+    width: auto; 
     height: 13px;
     top: 0;
     left: 0;
@@ -71,6 +72,24 @@ body{
 .tooltip-bottom {
     font-size: 13px;
     font-weight: normal;
+    position: relative;
+}
+
+.food-image {
+    /*position: absolute;*/
+    display: block;
+    right: 0;
+    top: 0;
+    float: right;
+}
+.food-image img {
+    height: 139px;
+    max-width: 139px;
+    display: block;
+    padding-left: 15px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
 }
 
 
