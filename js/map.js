@@ -49,7 +49,7 @@ d3.json("../data/yelp-fusion.json", function(collection) {
     .attr("data-cat", function(d){return d.categories[0].title;})
 
     .on("mouseover", function(d) {
-      var html  = d.name + "<br><hr>" + "Star Rating: " + d.rating + "<br>" + "Total Review: " + d.review_count;
+      var html  = d.name + "<br><hr><div class='tooltip-bottom'>" + "Star Rating: " + d.rating + "<br>" + "Total Review: " + d.review_count + "<br>" + "Category: " + d.categories[0].title + "</div>";
       tooltip.html(html)
         .style('background', '#fff')
         .style("left", (d3.event.pageX + 25) + "px")

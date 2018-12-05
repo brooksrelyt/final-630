@@ -36,6 +36,7 @@ body{
 
 .tooltip {
     padding: 1em !important;
+    font-weight: bold;
 }
 .tooltip:after {
     right: 100%;
@@ -67,7 +68,10 @@ body{
     margin: 2px 0 0 4px;
     border-radius: 5px;
 }
-
+.tooltip-bottom {
+    font-size: 13px;
+    font-weight: normal;
+}
 
 
 
