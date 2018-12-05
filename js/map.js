@@ -76,4 +76,5 @@ d3.json("../data/yelp-fusion.json", function(collection) {
       }
     )
   }
-})  
+}) 
+
