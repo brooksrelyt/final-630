@@ -44,12 +44,12 @@ d3.json("../data/yelp-fusion.json", function(collection) {
     // Adding classes directly from the JSON data to the svg circles to hopefully filter later
     .attr("data-id", function(d){return d.id;})
     .attr("data-star", function(d){return d.rating;})
-    .attr("data-staralt", function(d){return d.rating;})
     .attr("data-review", function(d){return d.review_count;})
     .attr("data-cat", function(d){return d.categories[0].title;})
+    .attr("data-price", function(d){return d.price;})
 
     .on("mouseover", function(d) {
-      var html  = "<a href='" + d.url + "'>" + d.name + "</a><br><hr><div class='tooltip-bottom'>" + "Star Rating: " 
+      var html  = "<a href='" + d.url + "'>" + d.name + "</a><span class='price'> &#183; "+ d.price +"</span><br><hr><div class='tooltip-bottom'>" + "Star Rating: " 
         + d.rating + "<br>" + "Total Review: " + d.review_count + "<br>" + "Category: " + d.categories[0].title + "</div><div class='food-image'><img src='" + d.image_url + "' alt=' ' /></div>";
       tooltip.html(html)
         .style('background', '#fff')
@@ -58,12 +58,23 @@ d3.json("../data/yelp-fusion.json", function(collection) {
       .transition()
         .duration(200) // ms
         .style("opacity", .9) // started as 0!
+
+        d3.select(".tooltip").transition().style("opacity", "1");
+        tooltip.show(d);
     })
     .on("mouseout",function(d) {
        tooltip.transition()
         .duration(300) // ms
         .style("opacity", 0); // don't care about position!
+        d3.select(".tooltip").transition().duration(1000).style("opacity", "0").each("end", tooltip.hide);
     })
+    
+    // SCRIPT ADDED TO HELP THE TOOLTIP STAY VISIBLE ON THE MOUSE OVER
+    d3.select(".tooltip").on('mouseover', function(d) {
+      d3.select(".tooltip").transition().style("opacity", "1");
+    }).on('mouseout', function(d) {
+      d3.select(".tooltip").transition().duration(1000).style("opacity", "0").each("end", tooltip.hide);
+    });
   
   map.on("viewreset", update);
   update();

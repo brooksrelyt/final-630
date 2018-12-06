@@ -53,6 +53,12 @@ body{
     border-width: 10px;
     margin-top: -10px;
 }
+.tooltip a {
+    color: #d64a4a;
+}
+.tooltip a:hover, .tooltip a:focus {
+    color: #900900;
+}
 .filter-row {
     width: 100%;
     padding: 0 15px;
@@ -86,14 +92,16 @@ body{
     height: 139px;
     max-width: 139px;
     display: block;
-    padding-left: 15px;
+    padding-left: 14px;
     overflow: hidden;
     position: absolute;
     top: 0;
 }
 
-
-
+.price {
+    color: #666666;
+    font-weight: normal;
+}
 
 
 
