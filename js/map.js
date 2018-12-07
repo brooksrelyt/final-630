@@ -55,6 +55,10 @@ d3.json("../data/yelp-fusion.json", function(collection) {
         .style('background', '#fff')
         .style("left", (d3.event.pageX + 25) + "px")
         .style("top", (d3.event.pageY - 30) + "px")
+        
+        // USE THIS FOR ABSOLUTE POSITIONING OF THE TOOLTIP
+        // .style("left", d3.select(this).attr("cx") + "px")     
+        // .style("top", d3.select(this).attr("cy") + "px")
       .transition()
         .duration(200) // ms
         .style("opacity", .9) // started as 0!
@@ -73,7 +77,7 @@ d3.json("../data/yelp-fusion.json", function(collection) {
     d3.select(".tooltip").on('mouseover', function(d) {
       d3.select(".tooltip").transition().style("opacity", "1");
     }).on('mouseout', function(d) {
-      d3.select(".tooltip").transition().duration(1000).style("opacity", "0").each("end", tooltip.hide);
+      d3.select(".tooltip").transition().duration(200).style("opacity", "0").each("end", tooltip.hide).disable();
     });
   
   map.on("viewreset", update);
