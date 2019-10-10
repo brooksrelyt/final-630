@@ -19,6 +19,6 @@ $(document).on('change', 'input[type=checkbox]', function() {
     $('input:checked').removeAttr('checked');
     $('.leaflet-zoom-animated > g > circle').show();
     e.preventDefault();
- });
+  });
 });
 
