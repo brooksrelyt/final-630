@@ -1,76 +1,132 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Final Project (DEV)</title>
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/leaflet.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="css/leaflet.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div id="svg-container">
-        <div id="map"></div>
-        <div id="filterbar" class="spaces">
-            <div class="row">
-                <div class="col">
-                    <header>
-                        <button type="button" id="reset">RESET</button>
-                        <p class="bold location">College Park, MD</p>
-                        <h1>Hunger-de-fusion</h1>
-                    </header>
-                </div>
-            </div>
+      <div id="map"></div>
+      <div id="filterbar" class="spaces">
+        <div class="row">
+          <div class="col">
+            <header>
+              <button type="button" id="reset">RESET</button>
+              <p class="bold location">College Park, MD</p>
+              <h1>Hunger-de-fusion</h1>
+            </header>
+          </div>
+        </div>
 
-            <div class="row space filter">
-                <div class="col">
-                    <h2>Star Rating</h2>
-                    <div id="star-filter">
-                        <div class="boxes">
-                            <input class="star" type="checkbox" value="5" id="s5" name="check" />
-                            <label for="s5"><img src="img/5star.png"></label>
-                        </div>
-                        <div class="boxes">
-                            <input class="star" type="checkbox" value="4" id="s4" name="check" />
-                            <label for="s4"><img src="img/4star.png"></label>
-                        </div>
-                        <div class="boxes">
-                            <input class="star" type="checkbox" value="3" id="s3" name="check" />
-                            <label for="s3"><img src="img/3star.png"></label>
-                        </div>
-                        <div class="boxes">
-                            <input class="star" type="checkbox" value="2" id="s2" name="check" />
-                            <label for="s2"><img src="img/2star.png"></label>
-                        </div>
-                        <div class="boxes">
-                            <input class="star" type="checkbox" value="1" id="s1" name="check" />
-                            <label for="s1"><img src="img/star.png"></label>
-                        </div>
-                    </div>
-                </div>
+        <div class="row space filter">
+          <div class="col">
+            <h2>Star Rating</h2>
+            <div id="star-filter">
+              <div class="boxes">
+                <input
+                  class="star"
+                  type="checkbox"
+                  value="5"
+                  id="s5"
+                  name="check"
+                />
+                <label for="s5"><img src="img/5star.png" /></label>
+              </div>
+              <div class="boxes">
+                <input
+                  class="star"
+                  type="checkbox"
+                  value="4"
+                  id="s4"
+                  name="check"
+                />
+                <label for="s4"><img src="img/4star.png" /></label>
+              </div>
+              <div class="boxes">
+                <input
+                  class="star"
+                  type="checkbox"
+                  value="3"
+                  id="s3"
+                  name="check"
+                />
+                <label for="s3"><img src="img/3star.png" /></label>
+              </div>
+              <div class="boxes">
+                <input
+                  class="star"
+                  type="checkbox"
+                  value="2"
+                  id="s2"
+                  name="check"
+                />
+                <label for="s2"><img src="img/2star.png" /></label>
+              </div>
+              <div class="boxes">
+                <input
+                  class="star"
+                  type="checkbox"
+                  value="1"
+                  id="s1"
+                  name="check"
+                />
+                <label for="s1"><img src="img/star.png" /></label>
+              </div>
             </div>
-            <div class="row space filter">
-                <div class="col">
-                    <h2>Price Range</h2>
-                    <div id="price-filter">
-                        <div class="boxes">
-                            <input class="star" type="checkbox" value="$" id="p1" name="check" />
-                            <label for="p1">$</label>
-                        </div>
-                        <div class="boxes">
-                            <input class="star" type="checkbox" value="$$" id="p2" name="check" />
-                            <label for="p2">$$</label>
-                        </div>
-                        <div class="boxes">
-                            <input class="star" type="checkbox" value="$$$" id="p3" name="check" />
-                            <label for="p3">$$$</label>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </div>
+        <div class="row space filter">
+          <div class="col">
+            <h2>Price Range</h2>
+            <div id="price-filter">
+              <div class="boxes">
+                <input
+                  class="star"
+                  type="checkbox"
+                  value="$"
+                  id="p1"
+                  name="check"
+                />
+                <label for="p1">$</label>
+              </div>
+              <div class="boxes">
+                <input
+                  class="star"
+                  type="checkbox"
+                  value="$$"
+                  id="p2"
+                  name="check"
+                />
+                <label for="p2">$$</label>
+              </div>
+              <div class="boxes">
+                <input
+                  class="star"
+                  type="checkbox"
+                  value="$$$"
+                  id="p3"
+                  name="check"
+                />
+                <label for="p3">$$$</label>
+              </div>
             </div>
-            <!-- <div class="row space filter">
+          </div>
+        </div>
+        <!-- <div class="row space filter">
                 <div class="col">
                     <h2>Review Count</h2>
                     <div id="review-filter">
@@ -113,88 +169,190 @@
                     </div>
                 </div>
             </div> -->
-            <div class="row space filter">
-                <div class="col">
-                    <h2>Category</h2>
-                    <div id="cat-filter">
-                        <div class="row r-list">
-                            <div class="col-6">
-                                <div class="boxes">
-                                    <input class="category" type="checkbox" value="Ramen" id="c1" name="category"/> 
-                                    <label for="c1">Ramen</label>
-                                </div>
-                                <div class="boxes">
-                                    <input class="category" type="checkbox" value="Breakfast & Brunch" id="c2" name="breakfast"/> 
-                                    <label for="c2">Breakfast & Brunch</label>
-                                </div>
-                                <div class="boxes">
-                                    <input class="category" type="checkbox" value="Spanish" id="c3" name="category"/> 
-                                    <label for="c3">Spanish</label>
-                                </div>
-                                <div class="boxes">
-                                    <input class="category" type="checkbox" value="Diners" id="c4" name="category"/> 
-                                    <label for="c4">Diners</label>
-                                </div>
-                                <div class="boxes">
-                                    <input class="category" type="checkbox" value="Delis" id="c5" name="category"/> 
-                                    <label for="c5">Delis</label>
-                                </div>
-                                <div class="boxes">
-                                    <input class="category" type="checkbox" value="Seafood" id="c6" name="category"/> 
-                                    <label for="c6">Seafood</label>
-                                </div>
-                                <div class="boxes">
-                                    <input class="category" type="checkbox" value="Greek" id="c7" name="category"/> 
-                                    <label for="c7">Greek</label>
-                                </div>
-                                <div class="boxes">
-                                    <input class="category" type="checkbox" value="Coffee & Tea" id="c8" name="category"/> 
-                                    <label for="c8">Coffee & Tea</label>
-                                </div>
-                                <div class="boxes">
-                                    <input class="category" type="checkbox" value="Mexican" id="c9" name="category"/> 
-                                    <label for="c9">Mexican</label>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="boxes">
-                                    <input class="category" type="checkbox" value="Jazz & Blues" id="c10" name="category"/> 
-                                    <label for="c10">Jazz & Blues</label>
-                                </div>
-                                <div class="boxes">
-                                    <input class="category" type="checkbox" value="Juice Bars & Smoothies" id="c11" name="category"/> 
-                                    <label for="c11">Juice Bars & Smoothies</label>
-                                </div>
-                                <div class="boxes">
-                                    <input class="category" type="checkbox" value="Latin American" id="c12" name="category"/> 
-                                    <label for="c12">Latin American</label>
-                                </div>
-                                <div class="boxes">
-                                    <input class="category" type="checkbox" value="Korean" id="c13" name="category"/> 
-                                    <label for="c13">Korean</label>
-                                </div>
-                                <div class="boxes">
-                                    <input class="category" type="checkbox" value="Chicken Shop" id="c14" name="category"/> 
-                                    <label for="c14">Chicken Shop</label>
-                                </div>
-                                <div class="boxes">
-                                    <input class="category" type="checkbox" value="Taiwanese" id="c15" name="category"/> 
-                                    <label for="c15">Taiwanese</label>
-                                </div>
-                                <div class="boxes">
-                                    <input class="category" type="checkbox" value="Indian" id="c16" name="category"/> 
-                                    <label for="c16">Indian</label>
-                                </div>
-                                <div class="boxes">
-                                    <input class="category" type="checkbox" value="Caribbean" id="c17" name="category"/> 
-                                    <label for="c17">Caribbean</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div class="row space filter">
+          <div class="col">
+            <h2>Category</h2>
+            <div id="cat-filter">
+              <div class="row r-list">
+                <div class="col-6">
+                  <div class="boxes">
+                    <input
+                      class="category"
+                      type="checkbox"
+                      value="Ramen"
+                      id="c1"
+                      name="category"
+                    />
+                    <label for="c1">Ramen</label>
+                  </div>
+                  <div class="boxes">
+                    <input
+                      class="category"
+                      type="checkbox"
+                      value="Breakfast & Brunch"
+                      id="c2"
+                      name="breakfast"
+                    />
+                    <label for="c2">Breakfast & Brunch</label>
+                  </div>
+                  <div class="boxes">
+                    <input
+                      class="category"
+                      type="checkbox"
+                      value="Spanish"
+                      id="c3"
+                      name="category"
+                    />
+                    <label for="c3">Spanish</label>
+                  </div>
+                  <div class="boxes">
+                    <input
+                      class="category"
+                      type="checkbox"
+                      value="Diners"
+                      id="c4"
+                      name="category"
+                    />
+                    <label for="c4">Diners</label>
+                  </div>
+                  <div class="boxes">
+                    <input
+                      class="category"
+                      type="checkbox"
+                      value="Delis"
+                      id="c5"
+                      name="category"
+                    />
+                    <label for="c5">Delis</label>
+                  </div>
+                  <div class="boxes">
+                    <input
+                      class="category"
+                      type="checkbox"
+                      value="Seafood"
+                      id="c6"
+                      name="category"
+                    />
+                    <label for="c6">Seafood</label>
+                  </div>
+                  <div class="boxes">
+                    <input
+                      class="category"
+                      type="checkbox"
+                      value="Greek"
+                      id="c7"
+                      name="category"
+                    />
+                    <label for="c7">Greek</label>
+                  </div>
+                  <div class="boxes">
+                    <input
+                      class="category"
+                      type="checkbox"
+                      value="Coffee & Tea"
+                      id="c8"
+                      name="category"
+                    />
+                    <label for="c8">Coffee & Tea</label>
+                  </div>
+                  <div class="boxes">
+                    <input
+                      class="category"
+                      type="checkbox"
+                      value="Mexican"
+                      id="c9"
+                      name="category"
+                    />
+                    <label for="c9">Mexican</label>
+                  </div>
                 </div>
+                <div class="col-6">
+                  <div class="boxes">
+                    <input
+                      class="category"
+                      type="checkbox"
+                      value="Jazz & Blues"
+                      id="c10"
+                      name="category"
+                    />
+                    <label for="c10">Jazz & Blues</label>
+                  </div>
+                  <div class="boxes">
+                    <input
+                      class="category"
+                      type="checkbox"
+                      value="Juice Bars & Smoothies"
+                      id="c11"
+                      name="category"
+                    />
+                    <label for="c11">Juice Bars & Smoothies</label>
+                  </div>
+                  <div class="boxes">
+                    <input
+                      class="category"
+                      type="checkbox"
+                      value="Latin American"
+                      id="c12"
+                      name="category"
+                    />
+                    <label for="c12">Latin American</label>
+                  </div>
+                  <div class="boxes">
+                    <input
+                      class="category"
+                      type="checkbox"
+                      value="Korean"
+                      id="c13"
+                      name="category"
+                    />
+                    <label for="c13">Korean</label>
+                  </div>
+                  <div class="boxes">
+                    <input
+                      class="category"
+                      type="checkbox"
+                      value="Chicken Shop"
+                      id="c14"
+                      name="category"
+                    />
+                    <label for="c14">Chicken Shop</label>
+                  </div>
+                  <div class="boxes">
+                    <input
+                      class="category"
+                      type="checkbox"
+                      value="Taiwanese"
+                      id="c15"
+                      name="category"
+                    />
+                    <label for="c15">Taiwanese</label>
+                  </div>
+                  <div class="boxes">
+                    <input
+                      class="category"
+                      type="checkbox"
+                      value="Indian"
+                      id="c16"
+                      name="category"
+                    />
+                    <label for="c16">Indian</label>
+                  </div>
+                  <div class="boxes">
+                    <input
+                      class="category"
+                      type="checkbox"
+                      value="Caribbean"
+                      id="c17"
+                      name="category"
+                    />
+                    <label for="c17">Caribbean</label>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- LIBRARIES -->
@@ -203,9 +361,9 @@
 
     <!-- Our JS -->
     <script type="text/javascript" src="js/map.js"></script>
-    
+
     <!-- jQuery and Our JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
-</body>
+  </body>
 </html>
